@@ -5,6 +5,11 @@ language: ruby
 rvm:
   - 2.2.3
 
-script:
+before_script:
+  - sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+  - sudo apt-get update
   - sudo apt-get install libgdal-dev
   - ruby ./bin/convert.rb | sh
+
+script:
+  - ls -alF data/geojson
