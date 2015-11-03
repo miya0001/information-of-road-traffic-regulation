@@ -1,15 +1,14 @@
 sudo: true
-
 language: ruby
-
 rvm:
-  - 2.2.3
-
+- 2.2.3
 before_script:
-  - sudo add-apt-repository --yes ppa:ubuntugis/ubuntugis-unstable
-  - sudo apt-get --yes update
-  - sudo apt-get --yes install gdal-bin
-  - ruby ./bin/convert.rb | sh
-
+- sudo add-apt-repository --yes ppa:ubuntugis/ubuntugis-unstable
+- sudo apt-get --yes update
+- sudo apt-get --yes install gdal-bin
+- bash bin/deploy.sh
 script:
-  - ls -alF data/geojson
+- ls -alF data/geojson
+env:
+  global:
+    secure: hCJGvGDwI4Qk1C7LJhYgbAtjqMTzEsDd5sElBSk5JVYekefv7TsOjKHZAxcE23LQcLnJZXuML67LF+N3ALcCbSLoN8DLH7stMhiox5J+8liai/rPIAz2kTKkHda0v1OITJLIIwnfTMcYFaIxLlBxYcncioUSYhr8QT5UHT57FnYn1fBmeRA2O8pBkztUdPVkRKZ/6KxtxpBolhOq75YK98LllST0Yf4LH06O4c/jbVf/nqjY1p4IttIZEtVRptwhDvgw3QcE+lVSLclcEJeq9mwI9mTWGtvyxDiWssaUx/dXQece08QT+gPRsfx9r56TwmVNGuxXgZvNe+MN9IkSc7S2cAAQEMiS9UMiXhEVQtGoWr9Op860Wsx0eBoBkaIhg2AzcrSKjAko4m5nHNUChjO9ItGjlAa4Zj/HLUqUTCIZilgjFwXefkQjuB1qR1IopUyhTrG81KcBlcoM49lvVSZ6ekN57VFwSumvOXbau59hUQ6GB0Y69wGdpjs/vXAporIl65EsocaEBi1OKDQap7IpN7UD6bYL1lGeNeGhFdcsdIlTO992kbSHV4GH4vg4b1UhSVd6n46VK2PlE1lyQNotIQ5wAhOcXryrHz2j4uRBgRvZlNThXMzmi20Wyb4Wp0+l97s+77k+YzFWyDtgx99Z2IvZTSpAOgSKOH46o54=
