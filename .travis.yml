@@ -1,7 +1,10 @@
+sudo: true
+
 language: ruby
 
 rvm:
   - 2.2.3
 
 script:
+  - sudo apt-get install libgdal-dev
   - ruby ./bin/convert.rb | sh
