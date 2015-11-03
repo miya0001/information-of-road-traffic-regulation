@@ -8,7 +8,7 @@ rvm:
 before_script:
   - sudo add-apt-repository --yes ppa:ubuntugis/ubuntugis-unstable
   - sudo apt-get --yes update
-  - sudo apt-get --yes install libgdal-dev
+  - sudo apt-get --yes install gdal-bin
   - ruby ./bin/convert.rb | sh
 
 script:
